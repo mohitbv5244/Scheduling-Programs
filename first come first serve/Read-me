@@ -1,0 +1,8 @@
+This program executes few tasks
+with the process time.
+
+We calculate the waiting time for each task and
+turn around time.
+
+The first come first serve program executes the
+tasks depending on their arrival order.
