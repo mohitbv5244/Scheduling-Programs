@@ -1,0 +1,9 @@
+This program executes few tasks
+with the process time.
+
+We use slection sort to sort the process time.
+Then we calculate the waiting time for each task and
+turn around time.
+
+The shortest job first program executes the
+tasks depending on their arrival order.
