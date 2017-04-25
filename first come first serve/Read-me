@@ -6,3 +6,15 @@ turn around time.
 
 The first come first serve program executes the
 tasks depending on their arrival order.
+
+The first task should not wait, and hence the waiting task for the
+first task should be zero.
+
+Completion time is the total time the task 
+has run on the processor.
+
+Turnaround time is the difference betwween the 
+completion time and the arrival time.
+
+Waitng time is the differnce between the turn 
+around time and the burst time.
