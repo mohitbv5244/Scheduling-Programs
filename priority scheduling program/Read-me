@@ -1,10 +1,19 @@
 This program executes few tasks
-with the process time and the priority.
+with the process time.
 
-We use slection sort to sort the priority with their
-respective procrss time.
+We use slection sort to sort the priority.
 Then we calculate the waiting time for each task and
 turn around time.
 
-The priority program executes the
+The shortest job first program executes the
 tasks depending on their arrival order.
+
+However, the first task will execute depending on the
+arrival time, but, the nex tasks are sorted according to
+their priority and then sheduled and executed.
+
+
+Completion time is the total time taken to execute the task.
+Turn around time is the difference between the completion time and
+the arrival time.
+Waiting time is the difference between the turn around time and burst time.
