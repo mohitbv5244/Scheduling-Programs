@@ -13,3 +13,7 @@ arrival time, but, the nex tasks are sorted according to
 their burst time and then sheduled and executed.
 
 
+Completion time is the total time taken to execute the task.
+Turn around time is the difference between the completion time and
+the arrival time.
+Waiting time is the difference between the turn around time and burst time.
