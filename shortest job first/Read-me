@@ -7,3 +7,9 @@ turn around time.
 
 The shortest job first program executes the
 tasks depending on their arrival order.
+
+However, the first task will execute depending on the
+arrival time, but, the nex tasks are sorted according to
+their burst time and then sheduled and executed.
+
+
