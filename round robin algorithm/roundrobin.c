@@ -2,64 +2,79 @@
 
 int main()
 {
-    int quantum, t , i, at[10], bt[10], n, rem_bt[10], tat[10], wt[10], flag = 1;
-    printf("enter the number of process\n");
-    scanf("%d", &n);
-    printf("enter the quantum\n");
-    scanf("%d", &quantum);
-    printf("enter the burst time for each task\n");
-    for(i = 0; i< n; i++)
-    {
-        scanf("%d", &bt[i]);
-    }
-     printf("enter the arrival time for each task\n");
-    for(i = 0; i< n; i++)
-    {
-        scanf("%d", &at[i]);
-    }
-    for(i = 0; i< n; i++)
-    {
-        rem_bt[i] = bt[i];
-    }
-    
-    while(1)
-    {
-     flag = 1;
-     for(i = 0; i <n ; i++)
-     {
-       if(rem_bt[i] > 0)
+  int at[10], bt[10], rem_bt[10], i = 0, n, quantum,t=0, done = 0, p[10], ct[10];
+  int wt[10], tat[10];
+  printf("enter the number of process\n");
+  scanf("%d", &n);
+  printf("enter the burst time \n");
+  for(i = 0; i <n ; i++)
+  {
+  scanf("%d", &bt[i]);
+  
+  }
+  printf("enter the arrival time\n");
+  for(i = 0; i <n ; i++)
+  {
+  scanf("%d", &at[i]);
+      
+  }
+  
+  printf("enter the quantum\n");
+  scanf("%d", &quantum);
+  
+  for(i =0 ; i< n ; i++)
+  {
+      rem_bt[i] = bt[i];// copy of the 
+  }
+  
+  while(1)
+  {
+      done = 1;//all the processes have been executed
+      for(i = 0; i<n ; i++)
+      {
+	     if(rem_bt[i] > 0)
+		 {
+          done = 0;//all the processes have not been executed
+          if(rem_bt[i] > quantum )
+          {
+              
+			   t = t+ quantum;//add the time for each process with their quantum value
+              rem_bt[i] = rem_bt[i] - quantum;// deduct the run-time quantum value from each process
+          }
+          else
+          {
+		  
+		  t = t + rem_bt[i];//in the last cycle, add the left over value to the time
+              
+              rem_bt[i] = 0;//which means this task has finished its execution
+			  ct[i] = t;//the updated t will give the value when the process has been completed
+			  
+          }
+		  }
+      }
+       if(done == 1)
        {
-          flag = 0;
-            if(rem_bt[i] > quantum)
-            {
-                t = t + quantum;
-                rem_bt[i] = rem_bt[i] - quantum;
-            }
-            else
-            {
-                t = t + rem_bt[i];
-                wt[i] = t - at[i]- bt[i];
-                rem_bt[i] = 0;
-            }
-         }
+            break;// condition for the while loop to break
        }
-       if(flag == 1)
-    {
-        break;
-    }
-    }
-    
-    for(i = 0; i < n; i++)
-    {
-        tat[i] =  wt[i] + bt[i];//waiting time + burst time for each task
-    }
-
-printf("\nprocess\tarrival time\tburst time\twaiting time\tturnaround time\n");
-for(i  =0; i < n;i++)
+  
+  }
+  
+ 
+  for(i = 0; i< n; i++)
+      {
+         tat[i] = ct[i] - at[i];// the turn around time is the difference in completion time and arrival time
+	}
+for(i = 0; i < n; i++)
 {
-    printf("p[%d]\t\t %d\t\t %d\t\t %d\t\t %d\n",i+1, at[i], bt[i], wt[i], tat[i] );
-}
-
+         wt[i] = tat[i] - bt[i];// the waiting time is the difference in the turn around time and the burst time.
+      }
+      
+  printf("\nprocess\tburst time\tarrival time\twaiting time\tturnaroundtime\tcompletion time\n");
+  for(i = 0; i< n;i++)
+  {
+      printf("\np[%d]\t%d\t%d\t%d\t%d\t%d\n", i+1, bt[i], at[i], wt[i], tat[i], ct[i]);
+  }
+  
     return 0;
 }
 
