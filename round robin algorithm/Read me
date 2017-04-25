@@ -6,8 +6,8 @@ first in first out(FIFO) queue, and each task is executed in
 the processor for a quantum, if the task is not executed completely
 then, the changes are saved for that task and the task is placed at the
 end of the queue.
-So, the waiting tme for the task is the time spent on the processor 
-and the difference with the arrival time and the burst time.
-The turn around time for each task is the addition of wait time and 
-burst time.
+so, the completion time for each process is the time spent on the processor
+after it has been executed finally.
+The turn around time is the difference in the completion time and arrival time.
+The waiting time is the difference in the turn around time and the burst time. 
 
