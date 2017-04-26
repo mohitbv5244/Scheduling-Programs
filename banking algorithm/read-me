@@ -1,0 +1,11 @@
+the bankers algorithm checks whether the given number of processes
+are in safe state or not depending on the values of resources.
+
+The maximum allocation vector and the allocation vector with the
+maximum resource vector are given, we need to calculate the need matrix
+which is the difference between the maximum allocation matrix and the allocation matrix.
+
+The available vector is the difference between the maximum resource vector and the allocation matrix.
+So the porcess are considered to be in safe state only if the need matrix is greater than the available vector
+and we keep updating the available vector whih is the addition of available vector with the allocation matrix.
+
