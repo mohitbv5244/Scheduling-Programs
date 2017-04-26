@@ -137,7 +137,7 @@ int main()
                printf("the processes are executing\n");
                for(j = 0; j < resources; j++)
                {
-                   available_vector[j] = available_vector[j] + allocation[i][j];//calculates the available vector from the available matrix
+                   available_vector[j] = available_vector[j] + allocation[i][j];//calculates the available vector from the available matrix(updating the vector)
                }
                counter--;//devrement the counter
                safe = 1;//raise the safe as 1
